@@ -22,12 +22,13 @@ X = audio_data[:, 1]
 Y = audio_data[:, 2]
 Z = audio_data[:, 3]
 print(X)
-# 3. Oblicz amplitudę (maksymalna wartość W)
-amplitudes= []
-for _ in W:
-    _ = np.abs(_)
-    amplitudes.append (_)
-
+# # 3. Oblicz amplitudę (maksymalna wartość W)
+# amplitudes= []
+# for _ in W:
+#     _ = np.abs(_)
+#     amplitudes.append (_)
+#jednak nie chyba
+amplitude = np.max(W)
 height, width, _ = room_image.shape  # Pobranie wymiarów obrazu
 mic_position = (width // 2, height // 2)  # Ustalenie pozycji mikrofonu w centrum obrazu
 # 4. Oblicz kierunek (azymut i elewacja)
