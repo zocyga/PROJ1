@@ -17,16 +17,18 @@ if audio_data.ndim == 1:
     raise ValueError("Plik WAV ma tylko jeden kanał. Oczekiwano 4 kanałów B-formatu.")
 
 W = audio_data[:, 0]
-print(X)
+
 X = audio_data[:, 1]
 Y = audio_data[:, 2]
 Z = audio_data[:, 3]
-
-# 3. Oblicz amplitudę (maksymalna wartość W)
-amplitudes= []
-for _ in W (
-    amplitudes.append(_)
-)
+print(X)
+# # 3. Oblicz amplitudę (maksymalna wartość W)
+# amplitudes= []
+# for _ in W:
+#     _ = np.abs(_)
+#     amplitudes.append (_)
+#jednak nie chyba
+amplitude = np.max(W)
 height, width, _ = room_image.shape  # Pobranie wymiarów obrazu
 mic_position = (width // 2, height // 2)  # Ustalenie pozycji mikrofonu w centrum obrazu
 # 4. Oblicz kierunek (azymut i elewacja)
@@ -48,3 +50,4 @@ def compute_azimuth_elevation(Ix, Iy, Iz):
 azimuth, elevation, distance = compute_azimuth_elevation(Ix, Iy, Iz)
 
 print(W, X,Y,Z)
+print(amplitudes)
