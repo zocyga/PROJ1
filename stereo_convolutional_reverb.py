@@ -9,7 +9,7 @@ def normalize(audio):
     return audio / np.max(np.abs(audio))
 
 
-# Wczytaj plik audio i dostosuj częstotliwość próbkowania
+# Wczytanie pliku audio i dostosowanie częstotliwości próbkowania
 # Częstotliwość próbkowania jest dostosowana dla pliku RIR, ponieważ z założenia jest krótszy
 def load_audio_resample(file_path, target_samplerate):
     data, samplerate = sf.read(file_path)
@@ -49,10 +49,10 @@ def apply_convolutional_reverb_stereo(audio_file, rir_file, output_file):
     convolved_left = fftconvolve(audio[:, 0], rir[:, 0], mode='full')
     convolved_right = fftconvolve(audio[:, 1], rir[:, 1], mode='full')
 
-    # Połącz przetworzone kanały w jeden sygnał stereo
+    # Połączenie przetworzonych kanałów w jeden sygnał stereo
     convolved_stereo = np.column_stack((convolved_left, convolved_right))
 
-    # Normalizuj wynikowy sygnał
+    # Normalizacja wynikowego sygnału
     convolved_stereo = normalize(convolved_stereo)
 
     # Zapisz wynik do pliku
@@ -64,8 +64,8 @@ def apply_convolutional_reverb_stereo(audio_file, rir_file, output_file):
 if __name__ == "__main__":
     # Ścieżki do plików audio
     audio_file = "inputaudio.wav"  # Plik utworu
-    rir_file = "rir_file_name.wav"  # Plik odpowiedzi impulsowej
-    output_file = "output_audio_file_name.wav"  # Wyjściowy plik z efektem
+    rir_file = "AirRaidShelter.wav"  # Plik odpowiedzi impulsowej
+    output_file = "output_shelter.wav"  # Wyjściowy plik z efektem
 
     # Nałóż efekt convolutional reverb w stereo
     apply_convolutional_reverb_stereo(audio_file, rir_file, output_file)
