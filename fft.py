@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
 # Wczytanie pliku WAV
-file_path = "direct_sound.wav"  # Podaj ścieżkę do pliku WAV
+file_path = "pliki_wave/direct_sound.wav"  # Podaj ścieżkę do pliku WAV
 sample_rate, data = wavfile.read(file_path)
 
 # Sprawdzenie liczby kanałów

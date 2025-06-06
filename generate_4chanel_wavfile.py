@@ -23,7 +23,7 @@ Z = S*np.sin(phi)
 signal = np.stack([W, X, Y, Z], axis=1)
 
 # Zapis do pliku WAV (16-bitowy format)
-write("ambisonic_impulse_response.wav", sample_rate, (signal * 32767).astype(np.int16))
+write("pliki_wave/ambisonic_impulse_response.wav", sample_rate, (signal * 32767).astype(np.int16))
 
 print("Plik ambisonic_impulse_response.wav został wygenerowany.")
 

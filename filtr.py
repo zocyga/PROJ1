@@ -3,7 +3,7 @@ from scipy.io.wavfile import read, write
 import scipy.signal as signal
 
 # Wczytaj plik WAV (odpowiedź impulsowa)
-wav_path = "ambisonic_impulse_response.wav"
+wav_path = "pliki_wave/ambisonic_impulse_response.wav"
 sample_rate, audio_data = read(wav_path)
 
 if audio_data.ndim == 1:
@@ -48,7 +48,7 @@ direct_sound = np.column_stack([direct_W, direct_X, direct_Y, direct_Z])
 first_reflection = np.column_stack([reflection_W, reflection_X, reflection_Y, reflection_Z])
 
 # Zapisz pliki WAV
-write("direct_sound.wav", sample_rate, (direct_sound * 32767).astype(np.int16))
-write("first_reflection.wav", sample_rate, (first_reflection * 32767).astype(np.int16))
+write("pliki_wave/direct_sound.wav", sample_rate, (direct_sound * 32767).astype(np.int16))
+write("pliki_wave/first_reflection.wav", sample_rate, (first_reflection * 32767).astype(np.int16))
 
 print("Pliki WAV zostały zapisane.")

@@ -6,14 +6,14 @@ import cv2
 from scipy.interpolate import griddata
 
 # 1. Wczytanie odpowiedzi impulsowej
-filename = 'M0001_S01_R04_ambix.wav'
+filename = 'pliki_wave/M0001_S01_R04_ambix.wav'
 y, sr = librosa.load(filename, sr=None, mono=False)  # Załaduj wszystkie kanały
 
 # Sprawdzenie liczby kanałów
 y_w, y_x, y_y, y_z = y  # Kanały ambisoniczne (W, X, Y, Z)
 
 # 2. Wczytanie sferycznego obrazu
-image_filename = 'S1_R4_sferyczne.jpg'
+image_filename = 'zdjecia_3d/S1_R4_sferyczne.JPG'
 room_image = cv2.imread(image_filename)
 room_image = cv2.cvtColor(room_image, cv2.COLOR_BGR2RGB)  # Konwersja do RGB
 

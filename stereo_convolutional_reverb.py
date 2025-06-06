@@ -63,9 +63,9 @@ def apply_convolutional_reverb_stereo(audio_file, rir_file, output_file):
 # Realizacja efektu reverb
 if __name__ == "__main__":
     # Ścieżki do plików audio
-    audio_file = "inputaudio.wav"  # Plik utworu
-    rir_file = "AirRaidShelter.wav"  # Plik odpowiedzi impulsowej
-    output_file = "output_shelter.wav"  # Wyjściowy plik z efektem
+    audio_file = "pliki_wave/inputaudio.wav"  # Plik utworu
+    rir_file = "pliki_wave/AirRaidShelter.wav"  # Plik odpowiedzi impulsowej
+    output_file = "pliki_wave/output_shelter.wav"  # Wyjściowy plik z efektem
 
     # Nałóż efekt convolutional reverb w stereo
     apply_convolutional_reverb_stereo(audio_file, rir_file, output_file)

@@ -10,8 +10,8 @@ room_image = cv2.imread(image_path)
 room_image = cv2.cvtColor(room_image, cv2.COLOR_BGR2RGB)
 
 # 2. Wczytaj plik WAV (odpowiedź impulsowa)
-ds_wav_path = "direct_sound.wav"
-fr_wav_path = "first_reflection.wav"
+ds_wav_path = "pliki_wave/direct_sound.wav"
+fr_wav_path = "pliki_wave/first_reflection.wav"
 sample_rate, audio_data = read(ds_wav_path)
 
 if audio_data.ndim == 1:

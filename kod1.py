@@ -10,7 +10,7 @@ room_image = cv2.imread(image_path)  # Wczytanie obrazu
 room_image = cv2.cvtColor(room_image, cv2.COLOR_BGR2RGB)  # Konwersja z BGR (OpenCV) na RGB (matplotlib)
 
 # 2. Wczytaj plik WAV (odpowiedź impulsowa)
-wav_path = "impulse_response.wav"  # Ścieżka do pliku WAV
+wav_path = "pliki_wave/impulse_response.wav"  # Ścieżka do pliku WAV
 sample_rate, audio_data = read(wav_path)  # Odczyt pliku dźwiękowego
 audio_data = audio_data / np.max(np.abs(audio_data))  # Normalizacja amplitudy dźwięku
 
